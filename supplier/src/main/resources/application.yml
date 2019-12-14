@@ -4,13 +4,6 @@ server:
 spring:
   application:
     name: supplier
-  datasource:
-    password: root
-    username: root
-    url: jdbc:mysql://localhost:3306/supplier-db
-  jpa:
-    hibernate:
-      ddl-auto: update
       
 #configurações para a aplicação supplier se registrar no eureka server
 eureka:
