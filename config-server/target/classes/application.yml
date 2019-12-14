@@ -1,0 +1,5 @@
+server:
+  port: 8888
+
+#Configuração para informar que o config server deve buscar as configurações no filesystem
+spring:  profiles:    active:    - native  cloud:    config:      server:        native:          search-locations:          - D:/Ambiente/workspace-spring/microservices-spring-example/config
