@@ -1,0 +1,6 @@
+server:
+  port: 8761
+
+#Configurações para ignorar registro e cache no eureka server
+eureka:  client:    fetch-registry: false
+    register-with-eureka: false
