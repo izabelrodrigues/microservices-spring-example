@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.izabelrodrigues</groupId>
-	<artifactId>loja</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>loja</name>
+	<artifactId>store</artifactId>
+	<version>1.0.0</version>
+	<name>store</name>
 	<description>Store Microservice</description>
 
 	<properties>
