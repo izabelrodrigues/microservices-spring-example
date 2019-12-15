@@ -2,9 +2,8 @@ server:
   port: 8888
 
 #Configuração para informar que o config server deve buscar as configurações no filesystem
-#spring:#  profiles:#    active:#    - native#  cloud:#    config:#      server:#        native:#          search-locations:#          - D:/Ambiente/workspace-spring/microservices-spring-example/config
-#          
-
+#spring:#  profiles:#    active:#    - native#  cloud:#    config:#      server:#        native:#          search-locations:##          - D:/Ambiente/workspace-spring/microservices-spring-example/config
+          
 
 #Para usar no github
 spring:
@@ -14,4 +13,4 @@ spring:
         git:
           uri: https://github.com/izabelrodrigues/microservices-repo-config
           search-paths:
-           - supplyer
+           - supplier
