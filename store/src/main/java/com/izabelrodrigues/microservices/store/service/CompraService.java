@@ -4,8 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.stereotype.Service;
 
+import com.izabelrodrigues.microservices.model.Compra;
 import com.izabelrodrigues.microservices.store.dto.CompraDTO;
 import com.izabelrodrigues.microservices.store.dto.InfoFornecedorDTO;
+import com.izabelrodrigues.microservices.store.dto.InfoPedidoDTO;
 import com.izabelrodrigues.microservices.store.feign.SupllierClient;
 
 @Service
@@ -40,8 +42,10 @@ public class CompraService {
 	@Autowired
 	private DiscoveryClient discoveryClient;
 
-	public void processar(CompraDTO compra) {
+	public Compra processar(CompraDTO compra) {
 		String estado = compra.getEndereco().getEstado();
+		String enderecoDestino = compra.getEndereco().toString();
+		
 		InfoFornecedorDTO infoPorEstado = supplierClient.getInfoPorEstado(estado);
 		System.out.println(infoPorEstado.getEndereco());
 
@@ -52,5 +56,10 @@ public class CompraService {
 		 */
 		discoveryClient.getInstances("supplier").stream()
 				.forEach(supplier -> System.out.println("localhost:" + supplier.getPort()));
+		
+		
+		InfoPedidoDTO pedido = supplierClient.realizaPedido(compra.getItens());
+		Compra compraSalva = new Compra();
+		return compraSalva.infoPedidoTOCompra(pedido, enderecoDestino);
 	}
 }

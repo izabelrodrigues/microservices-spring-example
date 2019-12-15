@@ -23,7 +23,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8081/info/GO",
+					"raw": "http://localhost:8081/info/MG",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -31,7 +31,7 @@
 					"port": "8081",
 					"path": [
 						"info",
-						"GO"
+						"MG"
 					]
 				}
 			},
@@ -55,6 +55,60 @@
 				"header": [],
 				"url": {
 					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Produtos Por Estado",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/produto/MG",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"produto",
+						"MG"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pedido - MG",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"id\": 1,\n        \"quantidade\": 5\n    },\n    {\n        \"id\": 3,\n        \"quantidade\": 1\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/pedido",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"pedido"
+					]
 				}
 			},
 			"response": []

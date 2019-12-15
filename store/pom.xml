@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.izabelrodrigues</groupId>
 	<artifactId>store</artifactId>
-	<version>3.0.0</version>
+	<version>4.0.0</version>
 	<name>store</name>
 	<description>Store Microservice</description>
 
