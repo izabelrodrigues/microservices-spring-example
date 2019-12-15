@@ -1,5 +1,7 @@
 package com.izabelrodrigues.microservices.store.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.stereotype.Service;
@@ -12,6 +14,8 @@ import com.izabelrodrigues.microservices.store.feign.SupllierClient;
 
 @Service
 public class CompraService {
+	
+	private static final Logger LOG = LoggerFactory.getLogger(CompraService.class);
 
 	/*
 	 * Implementação com RestTemplate
@@ -46,6 +50,8 @@ public class CompraService {
 		String estado = compra.getEndereco().getEstado();
 		String enderecoDestino = compra.getEndereco().toString();
 		
+		LOG.info(">>> Buscando informações do fornecedor de {}",estado);
+		
 		InfoFornecedorDTO infoPorEstado = supplierClient.getInfoPorEstado(estado);
 		System.out.println(infoPorEstado.getEndereco());
 
@@ -57,7 +63,7 @@ public class CompraService {
 		discoveryClient.getInstances("supplier").stream()
 				.forEach(supplier -> System.out.println("localhost:" + supplier.getPort()));
 		
-		
+		LOG.info(">>> Realizando um pedido...");
 		InfoPedidoDTO pedido = supplierClient.realizaPedido(compra.getItens());
 		Compra compraSalva = new Compra();
 		return compraSalva.infoPedidoTOCompra(pedido, enderecoDestino);
