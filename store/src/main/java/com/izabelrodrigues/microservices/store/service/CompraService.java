@@ -59,7 +59,6 @@ public class CompraService {
 		
 		
 		InfoPedidoDTO pedido = supplierClient.realizaPedido(compra.getItens());
-		System.out.println("PEDIDO"+ pedido.getId());
 		Compra compraSalva = new Compra();
 		return compraSalva.infoPedidoTOCompra(pedido, enderecoDestino);
 	}
