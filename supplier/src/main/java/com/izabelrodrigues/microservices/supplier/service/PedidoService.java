@@ -3,9 +3,12 @@ package com.izabelrodrigues.microservices.supplier.service;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.izabelrodrigues.microservices.supplier.controller.PedidoController;
 import com.izabelrodrigues.microservices.supplier.dto.ItemDoPedidoDTO;
 import com.izabelrodrigues.microservices.supplier.model.Pedido;
 import com.izabelrodrigues.microservices.supplier.model.PedidoItem;
@@ -15,6 +18,8 @@ import com.izabelrodrigues.microservices.supplier.repository.ProdutoRepository;
 
 @Service
 public class PedidoService {
+	
+	private static final Logger LOG = LoggerFactory.getLogger(PedidoService.class);
 	
 	@Autowired
 	private PedidoRepository pedidoRepository;
@@ -31,6 +36,8 @@ public class PedidoService {
 		List<PedidoItem> pedidoItens = toPedidoItem(itens);
 		Pedido pedido = new Pedido(pedidoItens);
 		pedido.setTempoDePreparo(itens.size());
+		
+		LOG.info(">>> Pedido recebido...");
 		return pedidoRepository.save(pedido);
 	}
 	
