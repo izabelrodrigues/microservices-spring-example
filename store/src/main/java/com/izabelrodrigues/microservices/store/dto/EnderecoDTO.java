@@ -50,4 +50,10 @@ public class EnderecoDTO {
 		this.estado = estado;
 	}
 
+	@Override
+	public String toString() {
+		return "Endereço destino: [logradouro=" + logradouro + ", numero=" + numero + ", estado=" + estado + "]";
+	}
+
+	
 }
