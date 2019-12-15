@@ -13,16 +13,16 @@ public class StoreApplication {
 
 	/**
 	 * Obtem uma instancia de rest template capaz de resolver o nome no eureka
-	 * server
+	 * server. Quando estiver usando a implementação do Rest template, o bloco
+	 * abaixo precisa ser descomentado.
 	 *
 	 * @return
-	 */
-	@Bean
-	@LoadBalanced
-	public RestTemplate getRestTemplate() {
-		return new RestTemplate();
-	}
-
+	 *//*
+		 * @Bean
+		 * 
+		 * @LoadBalanced public RestTemplate getRestTemplate() { return new
+		 * RestTemplate(); }
+		 */
 	public static void main(String[] args) {
 		SpringApplication.run(StoreApplication.class, args);
 	}

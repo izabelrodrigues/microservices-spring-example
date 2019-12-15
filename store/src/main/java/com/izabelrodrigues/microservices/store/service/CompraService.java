@@ -45,7 +45,12 @@ public class CompraService {
 		InfoFornecedorDTO infoPorEstado = supplierClient.getInfoPorEstado(estado);
 		System.out.println(infoPorEstado.getEndereco());
 
-		discoveryClient.getInstances("supllier").stream()
+		/**
+		 * O bloco abaixo é apenas um exemplo de como verficar quando se tem mais de uma
+		 * instância de um microserviço rodando. O mesmo não é necessário para o
+		 * problema do processamento da compra em si.
+		 */
+		discoveryClient.getInstances("supplier").stream()
 				.forEach(supplier -> System.out.println("localhost:" + supplier.getPort()));
 	}
 }

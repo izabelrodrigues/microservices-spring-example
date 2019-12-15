@@ -6,6 +6,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.izabelrodrigues.microservices.store.dto.InfoFornecedorDTO;
 
+/**
+ * Interface responsável por conter os métodos de serviços utilizando o Feing
+ * @author Izabel Rodrigues
+ *
+ */
 @FeignClient("supplier")
 public interface SupllierClient {
 
