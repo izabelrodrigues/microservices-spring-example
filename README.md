@@ -1,5 +1,3 @@
-# microservices-spring-example
-
 ## PROJETO DE ESTUDOS - MICROSERVIÇOS
 
 TAG v1.0.0:
