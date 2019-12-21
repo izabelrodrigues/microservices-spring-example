@@ -1,7 +1,7 @@
 ## PROJETO DE ESTUDOS - MICROSERVIÇOS
 
 TAG v1.0.0:
-  Criação dos microserviços da loja e do fornecedor com eureka netflix
+  Criação dos microserviços da loja e do fornecedor com eureka netflix:
     https://cloud.spring.io/spring-cloud-static/spring-cloud-netflix/2.2.0.RELEASE/reference/html/
 
 TAG v2.0.0:
